@@ -1,6 +1,6 @@
 {
-  "name": "graphile-worker",
-  "version": "0.13.0",
+  "name": "@liteflow/graphile-worker",
+  "version": "0.13.0-event-pool-listen-workersAreBusy-1",
   "description": "Job queue for PostgreSQL",
   "main": "dist/index.js",
   "scripts": {
@@ -19,7 +19,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/graphile/worker.git"
+    "url": "git+ssh://git@github.com/liteflow-labs/graphile-worker.git"
   },
   "keywords": [
     "postgresql",
@@ -36,9 +36,9 @@
   "author": "Benjie Gillam <code@benjiegillam.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/graphile/worker/issues"
+    "url": "https://github.com/liteflow-labs/graphile-worker/issues"
   },
-  "homepage": "https://github.com/graphile/worker#readme",
+  "homepage": "https://github.com/liteflow-labs/graphile-worker#readme",
   "dependencies": {
     "@graphile/logger": "^0.2.0",
     "@types/debug": "^4.1.2",
