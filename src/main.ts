@@ -262,7 +262,10 @@ export function runTaskList(
     function handleNotification() {
       if (listenForChangesClient === client) {
         // Find a worker that's available
-        workers.some((worker) => worker.nudge());
+        // Find a worker that's available
+        if (!workers.some((worker) => worker.nudge())) {
+          events.emit("pool:listen:workersAreBusy", { workerPool });
+        }
       }
     }
 

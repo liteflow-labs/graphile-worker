@@ -565,6 +565,11 @@ export type WorkerEventMap = {
   };
 
   /**
+   * When a worker pool receives a job notification but all workers are busy
+   */
+  "pool:listen:workersAreBusy": { workerPool: WorkerPool };
+
+  /**
    * When a worker pool is released
    */
   "pool:release": { pool: WorkerPool };
