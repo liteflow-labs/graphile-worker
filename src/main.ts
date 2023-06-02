@@ -150,12 +150,7 @@ export function runTaskList(
     },
 
     releaseWorker: async (workerId) => {
-      console.log(
-        "workers",
-        workers.map((worker) => worker.workerId),
-      );
       const index = workers.findIndex((worker) => worker.workerId === workerId);
-      console.log("index", index);
       if (index < 0) {
         throw new Error(`${workerId} not found`);
       }
