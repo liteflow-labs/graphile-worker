@@ -292,6 +292,8 @@ export interface WorkerPool {
   release: () => Promise<void>;
   gracefulShutdown: (message: string) => Promise<void>;
   promise: Promise<void>;
+  releaseWorker: (workerId: string) => Promise<void>;
+  createWorker: () => void;
 }
 
 export interface Runner {
@@ -299,6 +301,7 @@ export interface Runner {
   addJob: AddJobFunction;
   promise: Promise<void>;
   events: WorkerEvents;
+  workerPool: WorkerPool;
 }
 
 export interface Cron {

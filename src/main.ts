@@ -149,6 +149,25 @@ export function runTaskList(
       allWorkerPools.splice(idx, 1);
     },
 
+    releaseWorker: async (workerId) => {
+      console.log(
+        "workers",
+        workers.map((worker) => worker.workerId),
+      );
+      const index = workers.findIndex((worker) => worker.workerId === workerId);
+      console.log("index", index);
+      if (index < 0) {
+        throw new Error(`${workerId} not found`);
+      }
+      await Promise.all(
+        workers.splice(index, 1).map((worker) => worker.release()),
+      );
+    },
+
+    createWorker: () => {
+      workers.push(makeNewWorker(options, tasks, withPgClient));
+    },
+
     // Make sure we clean up after ourselves even if a signal is caught
     async gracefulShutdown(message: string) {
       events.emit("pool:gracefulShutdown", { pool: this, message });

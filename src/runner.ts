@@ -106,6 +106,7 @@ export const run = async (
       addJob,
       promise: workerPool.promise,
       events,
+      workerPool,
     };
   } catch (e) {
     await release();
